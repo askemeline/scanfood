@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <ImageView
+        android:id="@+id/placeholder"
+        android:layout_width="match_parent"
+        android:layout_height="290dp"
+        android:src="@drawable/placeholder"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintLeft_toRightOf="parent"
+     />
+
+    <TextView
+        android:id="@+id/description_product"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="16dp"
+        tools:text="Petits pois et carottes"
+        android:textColor="@color/colorText"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/placeholder"
+    />
+
+    <TextView
+        android:id="@+id/mark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="8dp"
+        tools:text="Cassergrain"
+        android:textStyle="italic"
+        android:textColor="@color/colorText"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/description_product"
+    />
+
+    <ImageView
+        android:id="@+id/nutriscore"
+        android:layout_width="78dp"
+        android:layout_height="43dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/description_product"
+        app:layout_constraintTop_toTopOf="@+id/description_product"
+        app:layout_constraintTop_toBottomOf="@+id/mark"
+        tools:srcCompat="@drawable/nutriscoree"
+
+        />
+
+    <TextView
+        android:id="@+id/title_bar_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="24dp"
+        android:textColor="@color/colorText"
+        android:textStyle="bold"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mark"
+        tools:text="Code barres :"
+    />
+
+    <TextView
+        android:id="@+id/bar_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:textColor="@color/colorText"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/title_bar_code"
+        app:layout_constraintStart_toEndOf="@+id/title_bar_code"
+        app:layout_constraintTop_toBottomOf="@+id/title_bar_code"
+        app:layout_constraintTop_toTopOf="@+id/title_bar_code"
+        tools:text="323232323232"
+    />
+
+    <TextView
+        android:id="@+id/title_quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        tools:text="Quantité :"
+        android:textStyle="bold"
+        android:textColor="@color/colorText"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bar_code"
+    />
+
+    <TextView
+        android:id="@+id/quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:textColor="@color/colorText"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/title_quantity"
+        app:layout_constraintStart_toEndOf="@+id/title_quantity"
+        app:layout_constraintTop_toBottomOf="@+id/title_quantity"
+        app:layout_constraintTop_toTopOf="@+id/title_quantity"
+        tools:text="40g (280 g net égouté)"
+    />
+
+    <TextView
+        android:id="@+id/title_from"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        tools:text="Vendu en :"
+        android:textStyle="bold"
+        android:textColor="@color/colorText"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quantity"
+    />
+
+    <TextView
+        android:id="@+id/from"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:textColor="@color/colorText"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/title_from"
+        app:layout_constraintStart_toEndOf="@+id/title_from"
+        app:layout_constraintTop_toBottomOf="@+id/title_from"
+        app:layout_constraintTop_toTopOf="@+id/title_from"
+        tools:text="France, Japon, Suisse"
+    />
+
+    <TextView
+        android:id="@+id/title_ingredient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="24dp"
+        tools:text="Ingrédient :"
+        android:textStyle="bold"
+        android:textColor="@color/colorText"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/from"
+    />
+
+    <TextView
+        android:id="@+id/ingredient"
+        android:layout_width="269dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:textColor="@color/colorText"
+        app:layout_constraintRight_toLeftOf="@+id/title_ingredient"
+        app:layout_constraintStart_toEndOf="@+id/title_ingredient"
+        app:layout_constraintTop_toBottomOf="@+id/title_ingredient"
+        app:layout_constraintTop_toTopOf="@+id/title_ingredient"
+        tools:text="Petis pois 66%, eau, garniture 2,8% (salade, oignon grelot), sucre, sel, arôme naturel"
+    />
+
+    <TextView
+        android:id="@+id/title_allergen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="24dp"
+        tools:text="Substances allergènes :"
+        android:textStyle="bold"
+        android:textColor="@color/colorText"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ingredient"
+    />
+
+    <TextView
+        android:id="@+id/allergen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:textColor="@color/colorText"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/title_allergen"
+        app:layout_constraintStart_toEndOf="@+id/title_allergen"
+        app:layout_constraintTop_toBottomOf="@+id/title_allergen"
+        app:layout_constraintTop_toTopOf="@+id/title_allergen"
+        tools:text="Aucune"
+    />
+
+    <TextView
+        android:id="@+id/title_addictifs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="24dp"
+        tools:text="Addictifs :"
+        android:textStyle="bold"
+        android:textColor="@color/colorText"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/allergen"
+    />
+
+    <TextView
+        android:id="@+id/addictifs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:textColor="@color/colorText"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/title_addictifs"
+        app:layout_constraintStart_toEndOf="@+id/title_addictifs"
+        app:layout_constraintTop_toBottomOf="@+id/title_addictifs"
+        app:layout_constraintTop_toTopOf="@+id/title_addictifs"
+        tools:text="Aucun"
+    />
+</androidx.constraintlayout.widget.ConstraintLayout>
