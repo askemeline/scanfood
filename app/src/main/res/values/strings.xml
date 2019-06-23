@@ -1,9 +1,3 @@
 <resources>
     <string name="app_name">OpenFoodFacts</string>
-    <string name="todo">TODO</string>
-    <string name="todo">TODO</string>
-    <plurals name="users">
-        <item quantity="one">Utilisateur</item>
-        <item quantity="other">Utilisateurs</item>
-    </plurals>
 </resources>
