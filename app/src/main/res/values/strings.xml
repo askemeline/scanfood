@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">OpenFoodFacts</string>
+    <string name="empty_ingredient">None</string>
 </resources>

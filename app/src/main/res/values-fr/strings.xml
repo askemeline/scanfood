@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Mon comparateur</string>
+    <string name="empty_ingredient">Aucun</string>
 </resources>
