@@ -45,36 +45,52 @@ class MainActivity : AppCompatActivity() {
         title_bar_code.setTitleValue("Code barres : ", product.barCode)
         title_quantity.setTitleValue("Quantité:", product.quantity)
 
-        title_ingredient.text = product.ingredient.joinToString(separator=", ")
+        title_ingredient.text = product.ingredient.joinToString(separator = ", ")
         title_ingredient.setTitleValue("Ingredients : ", formatList(product.ingredient))
 
-        title_from.text = product.countryFrom.joinToString(separator=", ")
+        title_from.text = product.countryFrom.joinToString(separator = ", ")
         title_from.setTitleValue("Vendu en : ", formatList(product.countryFrom))
 
-        title_allergen.text = product.allergen.joinToString(separator=", ")
+        title_allergen.text = product.allergen.joinToString(separator = ", ")
         title_allergen.setTitleValue("Substances allergènes : ", formatList(product.allergen))
 
-        title_addictifs.text = product.addictif.joinToString(separator=", ")
+        title_addictifs.text = product.addictif.joinToString(separator = ", ")
         title_addictifs.setTitleValue("Addictifs : ", formatList(product.addictif))
 
 
         val nutriscore = "B"
 
-        nutriscore_img.setImageResource(resources.getIdentifier("nutriscore${nutriscore.toLowerCase()}", "drawable",packageName))
+        nutriscore_img.setImageResource(
+            resources.getIdentifier(
+                "nutriscore${nutriscore.toLowerCase()}",
+                "drawable",
+                packageName
+            )
+        )
         Picasso.get().load(product.imgUrl).into(url_image)
 
 
-//        list.layoutManager = LinearLayoutManager(this)
-//        val products = listOf(Product("carotte","tomate","endive","courgette","test", "test","test","test"))
-//        list.adapter = ProductAdapter(products)
+        list.layoutManager = LinearLayoutManager(this)
+        val products = listOf(Product(
+            "Petits pois et carottes",
+            "Cassegrain",
+            "3083680085304",
+            "A",
+            "https://static.openfoodfacts.org/images/products/308/368/008/5304/front_fr.7.400.jpg",
+            "400 g (280 g net égoutté)",
+            listOf("France", "Japon", "Suisse"),
+            listOf("Petits pois 66%", "eau", "garniture 2,8% (salade, oignon grelot)", "sucre", "sel", "arôme naturel"),
+            listOf("Aucun"),
+            listOf("Aucune")        ))
+        list.adapter = ProductAdapter(products)
 
     }
 
 
-    fun formatList(list: List<String>) : String {
-        return if (list.isEmpty()){
+    fun formatList(list: List<String>): String {
+        return if (list.isEmpty()) {
             getString(R.string.empty_ingredient)
-        }else {
+        } else {
             list.joinToString(separator = ",")
         }
     }
