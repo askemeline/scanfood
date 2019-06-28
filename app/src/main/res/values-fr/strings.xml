@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Mon comparateur</string>
     <string name="empty_ingredient">Aucun</string>
+    <string name="title_nothing_scan">Vous n\'avez encore rien scanné !</string>
+    <string name="text_click_nothing_scan">Cliquez sur le bouton ci-dessous pour commencer</string>
+    <string name="scan_product">SCANNER UN PRODUIT</string>
 </resources>

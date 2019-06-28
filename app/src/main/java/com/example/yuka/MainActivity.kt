@@ -131,6 +131,7 @@ class MainActivity : AppCompatActivity() {
         title_addictifs.setTitleValue("Addictifs : ", formatList(product.addictif))
 
 
+
         val nutriscore = "B"
 
         nutriscore_img.setImageResource(
