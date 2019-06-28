@@ -3,8 +3,10 @@ package com.example.yuka
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.list_item_cell.view.*
 
 class ProductAdapter(val products: List<Product>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -23,7 +25,12 @@ class ProductAdapter(val products: List<Product>) : RecyclerView.Adapter<Recycle
 
 class ProductItemCell(v: View) : RecyclerView.ViewHolder(v) {
     private val name: TextView = v.product_name
+    private val picture: ImageView = v.product_image
+    private val mark: TextView = v.product_mark
     fun bindProduct(product: Product){
         name.text = product.name
+        Picasso.get().load(product.imgUrl).into(picture)
+        mark.text = product.mark
+
     }
 }

@@ -18,10 +18,36 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.product_detail)
+        setContentView(R.layout.list)
 
 
         supportActionBar?.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.toolbar))
+
+        list.layoutManager = LinearLayoutManager(this)
+
+        val products = listOf(
+            Product(
+                "Petits pois et carottes",
+                "Cassegrain",
+                "3083680085304",
+                "E",
+                "https://static.openfoodfacts.org/images/products/308/368/008/5304/front_fr.7.400.jpg",
+                "400 g (280 g net égoutté)",
+                listOf("France", "Japon", "Suisse"),
+                listOf(
+                    "Petits pois 66%",
+                    "eau",
+                    "garniture 2,8% (salade, oignon grelot)",
+                    "sucre",
+                    "sel",
+                    "arôme naturel"
+                ),
+                listOf(),
+                listOf()
+            )
+        )
+        list.adapter = ProductAdapter(products)
+
         val product = Product(
             "Petits pois et carottes",
             "Cassegrain",
@@ -36,7 +62,12 @@ class MainActivity : AppCompatActivity() {
         )
 
         Toast.makeText(this, "Hello World!", Toast.LENGTH_LONG).show();
-        setContentView(R.layout.product_detail)
+//        setContentView(R.layout.list_item_cell)
+
+
+    }
+
+    fun update(product: Product) {
         description_product.text = product.name
         mark.text = product.mark
         title_bar_code.text = product.barCode
@@ -68,24 +99,7 @@ class MainActivity : AppCompatActivity() {
             )
         )
         Picasso.get().load(product.imgUrl).into(url_image)
-
-
-        list.layoutManager = LinearLayoutManager(this)
-        val products = listOf(Product(
-            "Petits pois et carottes",
-            "Cassegrain",
-            "3083680085304",
-            "A",
-            "https://static.openfoodfacts.org/images/products/308/368/008/5304/front_fr.7.400.jpg",
-            "400 g (280 g net égoutté)",
-            listOf("France", "Japon", "Suisse"),
-            listOf("Petits pois 66%", "eau", "garniture 2,8% (salade, oignon grelot)", "sucre", "sel", "arôme naturel"),
-            listOf("Aucun"),
-            listOf("Aucune")        ))
-        list.adapter = ProductAdapter(products)
-
     }
-
 
     fun formatList(list: List<String>): String {
         return if (list.isEmpty()) {
