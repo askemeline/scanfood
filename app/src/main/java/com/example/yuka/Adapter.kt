@@ -34,8 +34,11 @@ class ProductItemCell(v: View) : RecyclerView.ViewHolder(v) {
         name.text = product.name
         Picasso.get().load(product.imgUrl).into(picture)
         mark.text = product.mark
-        nutriscore.text = product.nutriscore
         calorie.text = product.calorie.toString()
+
+        nutriscore.setTitleValue("Nutriscore : ", product.nutriscore)
+
+        calorie.setTitleValue(product.calorie.toString()," kCal/part")
 
     }
 }
