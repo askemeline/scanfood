@@ -43,7 +43,48 @@ class MainActivity : AppCompatActivity() {
                     "arôme naturel"
                 ),
                 listOf(),
-                listOf()
+                listOf(),
+                122
+            ),
+            Product(
+                "Petits pois et carottes",
+                "Cassegrain",
+                "3083680085304",
+                "E",
+                "https://static.openfoodfacts.org/images/products/308/368/008/5304/front_fr.7.400.jpg",
+                "400 g (280 g net égoutté)",
+                listOf("France", "Japon", "Suisse"),
+                listOf(
+                    "Petits pois 66%",
+                    "eau",
+                    "garniture 2,8% (salade, oignon grelot)",
+                    "sucre",
+                    "sel",
+                    "arôme naturel"
+                ),
+                listOf(),
+                listOf(),
+                12
+            ),
+            Product(
+                "Petits pois et carottes",
+                "Cassegrain",
+                "3083680085304",
+                "E",
+                "https://static.openfoodfacts.org/images/products/308/368/008/5304/front_fr.7.400.jpg",
+                "400 g (280 g net égoutté)",
+                listOf("France", "Japon", "Suisse"),
+                listOf(
+                    "Petits pois 66%",
+                    "eau",
+                    "garniture 2,8% (salade, oignon grelot)",
+                    "sucre",
+                    "sel",
+                    "arôme naturel"
+                ),
+                listOf(),
+                listOf(),
+                12
             )
         )
         list.adapter = ProductAdapter(products)
@@ -58,7 +99,8 @@ class MainActivity : AppCompatActivity() {
             listOf("France", "Japon", "Suisse"),
             listOf("Petits pois 66%", "eau", "garniture 2,8% (salade, oignon grelot)", "sucre", "sel", "arôme naturel"),
             listOf("Aucun"),
-            listOf("Aucune")
+            listOf("Aucune"),
+            12
         )
 
         Toast.makeText(this, "Hello World!", Toast.LENGTH_LONG).show();
@@ -126,7 +168,8 @@ data class Product(
     val countryFrom: List<String>,
     val ingredient: List<String>,
     val allergen: List<String>,
-    val addictif: List<String>
+    val addictif: List<String>,
+    val calorie: Int
 )
 
 

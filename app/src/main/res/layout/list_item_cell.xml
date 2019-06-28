@@ -34,7 +34,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/product_image"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:layout_marginTop="20sp"
+                android:layout_marginTop="16dp"
                 tools:text="toto"
                 app:layout_constraintStart_toStartOf="@+id/margin_start"
                 android:textColor="@color/colorText"
@@ -45,7 +45,6 @@
                 android:id="@+id/product_mark"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
                 android:textColor="@color/colorText"
                 android:textSize="15sp"
                 app:layout_constraintTop_toBottomOf="@+id/product_name"
@@ -59,11 +58,10 @@
                 android:layout_height="32dp"
                 android:src="@drawable/ic_nav_bar_bookmarks"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/product_name"
                 android:contentDescription="TODO"
                 android:tint="@color/colorPrimary"
                 app:layout_constraintEnd_toEndOf="@+id/margin_end"
-        />
+                android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/product_image"/>
 
         <ImageView
                 android:id="@+id/img_nutriscore"
@@ -73,9 +71,8 @@
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/product_mark"
                 android:contentDescription="TODO"
-                android:tint="@color/colorText"
                 app:layout_constraintStart_toStartOf="@+id/margin_start"
-        />
+                android:layout_marginTop="8dp"/>
         <TextView
                 android:id="@+id/title_nutriscore"
                 android:layout_width="wrap_content"
@@ -89,7 +86,7 @@
                 app:layout_constraintStart_toEndOf="@+id/img_nutriscore"
                 app:layout_constraintBottom_toBottomOf="@+id/margin_bottom"
 
-        />
+                android:layout_marginTop="8dp"/>
 
 
         <ImageView
@@ -99,9 +96,9 @@
                 android:src="@drawable/ic_calories"
                 app:layout_constraintTop_toBottomOf="@+id/product_mark"
                 android:contentDescription="TODO"
-                android:tint="@color/colorText"
                 android:layout_marginEnd="8dp"
-                app:layout_constraintEnd_toStartOf="@+id/title_calorie" android:layout_marginRight="8dp"/>
+                app:layout_constraintEnd_toStartOf="@+id/title_calorie" android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"/>
 
         <TextView
                 android:id="@+id/title_calorie"

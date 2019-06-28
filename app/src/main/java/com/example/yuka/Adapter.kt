@@ -26,11 +26,15 @@ class ProductAdapter(val products: List<Product>) : RecyclerView.Adapter<Recycle
 class ProductItemCell(v: View) : RecyclerView.ViewHolder(v) {
     private val name: TextView = v.product_name
     private val picture: ImageView = v.product_image
+    private val  nutriscore: TextView = v.title_nutriscore
+    private val calorie: TextView = v.title_calorie
     private val mark: TextView = v.product_mark
     fun bindProduct(product: Product){
         name.text = product.name
         Picasso.get().load(product.imgUrl).into(picture)
         mark.text = product.mark
+        nutriscore.text = product.nutriscore
+        calorie.text = product.calorie.toString()
 
     }
 }
