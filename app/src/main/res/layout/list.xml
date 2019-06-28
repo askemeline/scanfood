@@ -4,6 +4,7 @@
         android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="15dp">
+        android:layout_margin="15dp"
+        android:radius="10dp">
 
 </androidx.recyclerview.widget.RecyclerView>
