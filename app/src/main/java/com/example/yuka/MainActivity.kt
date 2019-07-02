@@ -3,6 +3,7 @@ package com.example.yuka
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Parcelable
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.style.StyleSpan
@@ -11,6 +12,7 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.squareup.picasso.Picasso
+import kotlinx.android.parcel.Parcelize
 import kotlinx.android.synthetic.main.list.*
 import kotlinx.android.synthetic.main.product_detail.*
 
@@ -22,8 +24,11 @@ class MainActivity : AppCompatActivity() {
 
 
         supportActionBar?.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.toolbar))
+        supportActionBar?.title = getString(R.string.title_toolbar)
 
         list.layoutManager = LinearLayoutManager(this)
+
+
 
         val products = listOf(
             Product(
@@ -157,6 +162,7 @@ fun TextView.setTitleValue(title: String, value: String) {
         setSpan(StyleSpan(Typeface.BOLD), 0, title.length, Spannable.SPAN_INCLUSIVE_INCLUSIVE)
     }
 }
+@Parcelize
 
 data class Product(
     val name: String,
@@ -170,7 +176,11 @@ data class Product(
     val allergen: List<String>,
     val addictif: List<String>,
     val calorie: Int
-)
+) : Parcelable{
+
+}
+
+
 
 
 

@@ -4,5 +4,5 @@
     <string name="title_nothing_scan">Nothing to scan yet !</string>
     <string name="text_click_nothing_scan">Click to the button to start</string>
     <string name="scan_product">SCAN PRODUCT</string>
-    title_nothing_scan
+    <string name="title_toolbar">My products</string>
 </resources>

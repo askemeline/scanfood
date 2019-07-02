@@ -1,5 +1,6 @@
 package com.example.yuka
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -40,5 +41,12 @@ class ProductItemCell(v: View) : RecyclerView.ViewHolder(v) {
 
         calorie.setTitleValue(product.calorie.toString()," kCal/part")
 
+
+        itemView.setOnClickListener{
+            val context = it.context
+            val intent = Intent(context, DetailsProductActivity::class.java)
+            intent.putExtra("product", product)
+            context.startActivity(intent)
+        }
     }
 }
