@@ -7,9 +7,11 @@ import android.os.Parcelable
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.style.StyleSpan
+import android.view.*
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.squareup.picasso.Picasso
 import kotlinx.android.parcel.Parcelize
@@ -27,7 +29,6 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.title = getString(R.string.title_toolbar)
 
         list.layoutManager = LinearLayoutManager(this)
-
 
 
         val products = listOf(
@@ -114,6 +115,20 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_main_activity, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+
+        if (item?.itemId == R.id.barcode) {
+            //TODO OUVRIR LE LECTEUR DE CODE BARRE
+            return true
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
     fun update(product: Product) {
         description_product.text = product.name
         mark.text = product.mark
@@ -155,6 +170,8 @@ class MainActivity : AppCompatActivity() {
             list.joinToString(separator = ",")
         }
     }
+
+
 }
 
 fun TextView.setTitleValue(title: String, value: String) {
@@ -162,6 +179,8 @@ fun TextView.setTitleValue(title: String, value: String) {
         setSpan(StyleSpan(Typeface.BOLD), 0, title.length, Spannable.SPAN_INCLUSIVE_INCLUSIVE)
     }
 }
+
+
 @Parcelize
 
 data class Product(
@@ -176,12 +195,16 @@ data class Product(
     val allergen: List<String>,
     val addictif: List<String>,
     val calorie: Int
-) : Parcelable{
+) : Parcelable {
 
 }
 
 
-
+//open class Fragment : Fragment(){
+//    override fun onCreateView(name: String?, context: Context?, attrs: AttributeSet?): View? {
+//        return super.onCreateView(name, context, attrs)
+//    }
+//}
 
 
 
