@@ -5,6 +5,6 @@
     <string name="text_click_nothing_scan">Cliquez sur le bouton ci-dessous pour commencer</string>
     <string name="scan_product">SCANNER UN PRODUIT</string>
     <string name="title_toolbar">Mes produits</string>
-    <string name="menu_barcode">Code bare</string>
+    <string name="products">Mes produits</string>
 
 </resources>
