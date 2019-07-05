@@ -1,25 +1,31 @@
-package com.example.yuka
+package com.example.yuka.screens.list
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Parcelable
 import android.view.*
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
-import kotlinx.android.parcel.Parcelize
-import kotlinx.android.synthetic.main.list.*
+import com.example.yuka.R
+import com.example.yuka.model.Product
+import kotlinx.android.synthetic.main.activity_details.*
+import kotlinx.android.synthetic.main.activity_products_list.*
 
-class MainActivity : AppCompatActivity() {
+class ProductsListActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.list)
+
+        setContentView(R.layout.activity_products_list)
+        setSupportActionBar(toolbar)
+
+
 
         supportActionBar?.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.toolbar))
         supportActionBar?.title = getString(R.string.products)
 //        Toast.makeText(this, "Hello World!", Toast.LENGTH_LONG).show();
 
         list.layoutManager = LinearLayoutManager(this)
+
 
         val products = listOf(
             Product(
@@ -100,25 +106,6 @@ class MainActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
-
-}
-
-
-@Parcelize
-
-data class Product(
-    val name: String,
-    val mark: String,
-    val barCode: String,
-    val nutriscore: String,
-    val imgUrl: String,
-    val quantity: String,
-    val countryFrom: List<String>,
-    val ingredient: List<String>,
-    val allergen: List<String>,
-    val addictif: List<String>,
-    val calorie: Int
-) : Parcelable {
 
 }
 

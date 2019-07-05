@@ -1,4 +1,4 @@
-package com.example.yuka
+package com.example.yuka.screens.list
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -7,13 +7,22 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.yuka.screens.details.DetailsProductActivity
+import com.example.yuka.R
+import com.example.yuka.model.Product
+import com.example.yuka.utils.setTitleValue
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.list_item_cell.view.*
-import kotlinx.android.synthetic.main.product_detail.*
+import kotlinx.android.synthetic.main.products_list_item_cell.view.*
 
 class ProductAdapter(val products: List<Product>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        return ProductItemCell(LayoutInflater.from(parent.context).inflate(R.layout.list_item_cell, parent, false))
+        return ProductItemCell(
+            LayoutInflater.from(parent.context).inflate(
+                R.layout.products_list_item_cell,
+                parent,
+                false
+            )
+        )
     }
 
     override fun getItemCount(): Int {
