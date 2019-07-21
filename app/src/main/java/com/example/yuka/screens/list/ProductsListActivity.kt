@@ -1,11 +1,14 @@
 package com.example.yuka.screens.list
 
+import android.app.Activity
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.*
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.yuka.R
+//import com.example.yuka.model.NutritionFactsItem
 import com.example.yuka.model.Product
 import kotlinx.android.synthetic.main.activity_details.*
 import kotlinx.android.synthetic.main.activity_products_list.*
@@ -16,9 +19,6 @@ class ProductsListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_products_list)
-        setSupportActionBar(toolbar)
-
-
 
         supportActionBar?.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.toolbar))
         supportActionBar?.title = getString(R.string.products)
@@ -47,6 +47,11 @@ class ProductsListActivity : AppCompatActivity() {
                 listOf(),
                 listOf(),
                 122
+//                NutritionFactsItem(
+//                    "kj",
+//                    0.57,
+//                    293
+//                )
             ),
             Product(
                 "Petits pois et carottes",
@@ -67,6 +72,11 @@ class ProductsListActivity : AppCompatActivity() {
                 listOf(),
                 listOf(),
                 12
+//                NutritionFactsItem(
+//                    "kCal",
+//                    (1..600).shuffled().first(),
+//                    (1..600).shuffled().first()
+//                )
             ),
             Product(
                 "Petits pois et carottes",
@@ -88,6 +98,11 @@ class ProductsListActivity : AppCompatActivity() {
                 listOf(),
                 12
             )
+//            NutritionFactsItem(
+//                "gramme",
+//                (1..600).shuffled().first(),
+//                (1..600).shuffled().first()
+//            )
         )
         list.adapter = ProductAdapter(products)
 
@@ -101,12 +116,24 @@ class ProductsListActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
 
         if (item?.itemId == R.id.barcode) {
-            //TODO OUVRIR LE LECTEUR DE CODE BARRE
+
+            val intent = Intent("com.google.zxing.client.android.SCAN")
+            intent.putExtra("SCAN_FORMATS", "EAN_13")
+            startActivityForResult(intent, 100)
+
             return true
         }
         return super.onOptionsItemSelected(item)
     }
 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (data != null) {
+            data.getStringExtra("SCAN_RESULT_FORMAT")
+            data.getStringExtra("SCAN_RESULT")
+
+        }
+    }
 }
 
 

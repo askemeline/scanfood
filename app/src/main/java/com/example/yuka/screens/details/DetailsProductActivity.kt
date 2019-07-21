@@ -5,8 +5,13 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.example.yuka.R
 import com.example.yuka.model.Product
+import com.example.yuka.request.Request
+import com.example.yuka.request.ServerResponse
 import com.example.yuka.screens.list.ProductDetailsAdapter
 import kotlinx.android.synthetic.main.activity_details.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class DetailsProductActivity : AppCompatActivity() {
 
@@ -17,7 +22,26 @@ class DetailsProductActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         //recuperer le produit passer en parametre
+        // TODO Changer pour un code-barres
         val product = intent.getParcelableExtra<Product>("product")
+        val barcode = "12345"
+
+        Request().getProduct(barcode, object: Callback<ServerResponse> {
+            override fun onFailure(call: Call<ServerResponse>, t: Throwable) {
+                //
+            }
+
+            override fun onResponse(
+                call: Call<ServerResponse>,
+                response: Response<ServerResponse>
+            ) {
+                response.body()
+              //TODO changer ca pour avoir la mm chose mais avec le code bar
+                //TODO viewpager.adapter = ProductDetailsAdapter(supportFragmentManager, product)
+
+            }
+
+        })
 
 
         setContentView(R.layout.activity_details)

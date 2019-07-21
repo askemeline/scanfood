@@ -16,6 +16,7 @@ data class Product(
     val allergen: List<String>,
     val addictif: List<String>,
     val calorie: Int
+//    val nutriFacts: NutritionFactsItem
 ) : Parcelable {
 
 }
